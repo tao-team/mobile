@@ -13,6 +13,7 @@ const TodoList = ({ items }) => {
       renderItem={item => <Item text={item} />}
       style={{
         width: "100%",
+        overflowY: "scroll",
       }}
     />
   );

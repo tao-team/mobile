@@ -1,4 +1,4 @@
-import { Button, Divider, Input, Modal } from "antd";
+import { Button, Divider, Input, Modal, Typography } from "antd";
 import React, { useRef, useState } from "react";
 import TodoList from "./TodoList";
 
@@ -11,8 +11,33 @@ function App() {
     "Feed the cat",
     "Feed the cat",
     "Feed the cat",
+    "Feed the cat",
+    "Feed the cat",
+    "Feed the cat",
+    "Feed the cat",
+    "Feed the cat",
+    "Feed the cat",
+    "Feed the cat",
+    "Feed the cat",
+    "Feed the cat",
+    "Feed the cat",
+    "Feed the cat",
+    "Feed the cat",
   ]);
+
   const newTodo = useRef("");
+  const addNewTodo = () => {
+    setTodoItems([...todoItems, newTodo.current.state.value]);
+    setShowModal(false);
+
+    // set ref value to default for new todo entering
+    newTodo.current.state.value = "";
+  };
+  const closeModal = () => {
+    setShowModal(false);
+    // user may want to complete entering todo later so do not set ref to default value
+  };
+
   return (
     <div
       style={{
@@ -24,6 +49,18 @@ function App() {
         flexDirection: "column",
       }}
     >
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          width: "100%",
+        }}
+      >
+        <Typography.Title level={3}>
+          19. Создать страницу с реакт-компонентами — по типу Трелло или TodoList для учета задач
+        </Typography.Title>
+      </div>
       <div
         style={{
           marginLeft: "auto",
@@ -43,22 +80,17 @@ function App() {
             justifyContent: "flex-end",
           }}
         >
-          <Button onClick={() => setShowModal(true)} type="primary">
+          <Button
+            onClick={() => {
+              setShowModal(true);
+              setTimeout(() => newTodo.current.focus(), 100);
+            }}
+            type="primary"
+          >
             Add ToDo
           </Button>
-          <Modal
-            visible={showModal}
-            closable={false}
-            onCancel={() => setShowModal(false)}
-            onOk={() => {
-              const newTodoItems = todoItems.slice();
-              newTodoItems.push(newTodo.current.state.value);
-              setTodoItems(newTodoItems);
-              setShowModal(false);
-              console.log("onOk > ", todoItems);
-            }}
-          >
-            <Input type="text" placeholder="Feed the cat" ref={newTodo}></Input>
+          <Modal visible={showModal} closable={false} onCancel={closeModal} onOk={addNewTodo}>
+            <Input type="text" placeholder="Feed the cat" ref={newTodo} onPressEnter={addNewTodo}></Input>
           </Modal>
         </div>
         <Divider type="horizontal" orientation="left">
@@ -67,9 +99,7 @@ function App() {
         <div
           style={{
             display: "flex",
-            // flex: "1 1 auto",
-            height: "calc(100vh - 48px - 32px - 50px)",
-            overflowY: "scroll",
+            height: "calc(100vh - 200px)",
           }}
         >
           <TodoList items={todoItems} />

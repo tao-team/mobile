@@ -32,7 +32,7 @@ const Item = ({ text }) => {
             Todo
           </Button>
         ) : (
-          <Button type="ghost" onClick={() => setCompleted(true)}>
+          <Button type="primary" onClick={() => setCompleted(true)}>
             Complete
           </Button>
         )}
