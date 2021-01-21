@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>My Page</title>
+</head>
+
+<body>
+</body>
+
+<script>
+
+function primes(N) {
+  let res = [2];
+  for (let i = 3; i < N; i+=2) {
+    let isPrime = true;
+    for (let k = 0, limit = Math.sqrt(i); res[k] <= limit; ++k) {
+      let d = res[k];
+      if (i % d == 0) {isPrime = false;break;}
+    }
+    if (isPrime) res.push(i);
+  }
+  return res;
+}
+
+
+function list_join(list, sep = ',') {
+  let str = '';
+  for (let i = 0; i < list.length; ++i) {
+    let el = list[i];
+    str += el;
+    if (i < list.length-1) str += sep;
+  }
+  return str;
+}
+
+let max = prompt("Введите верхнюю границу");
+let res = primes(max);
+
+alert(list_join(res, ', '));
+</script>
+
+</html>
