@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Подбор мастера</string>
+    <string name="name">Имя</string>
+    <string name="rating">4.8</string>
+    <string name="desc">Описание</string>
+    <string name="image_of_master">Картинка мастера</string>
+</resources>
