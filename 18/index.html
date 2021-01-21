@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form class="main-form">
+    <textarea class="text"></textarea>
+    <button type="submit" class="subm">Отправить</button>
+</form>
+<div class="result"></div>
+<script>
+    document.querySelector(`.subm`).addEventListener(`click`, (evt) => {
+        evt.preventDefault();
+        document.querySelector('.result').innerHTML = ``;
+
+        const res = Object.entries(countWords()).sort((a,b) => b[1]-a[1]).slice(0, 3);
+        for (let el in res) {
+            const node = document.createElement(`p`);
+            node.textContent = `Слово ${res[el][0]} встречается ${res[el][1]} раз/раза.`;
+            document.querySelector('.result').append(node);
+        }
+    });
+
+    const countWords = () => {
+        const res = {};
+        const wordsList = document.querySelector(`.text`).value
+            .replace(/[.]/g, '').split(/\s/);
+        wordsList.forEach((word) => {
+            res[word] = res.hasOwnProperty(word) ? res[word] += 1 : 1;
+        })
+
+        return res;
+    }
+</script>
+</body>
+</html>
