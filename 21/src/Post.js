@@ -12,7 +12,7 @@ const getRandomInt = base => {
   return Math.floor(Math.random() * Math.floor(base));
 };
 
-const Post = ({ title, description }) => {
+const Post = ({ title, description, key }) => {
   const width = (2 + getRandomInt(3)) * 100;
   const height = (2 + getRandomInt(3)) * 100;
 
@@ -43,12 +43,13 @@ const Post = ({ title, description }) => {
         padding: "0 12px",
       }}
     >
-      <Like context={{ postTitle: title }} />
+      <Like context={{ postTitle: title, key: key }} />
     </div>,
   ];
 
   return (
     <div
+      key={key}
       style={{
         display: "flex",
         flexDirection: "row",

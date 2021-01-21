@@ -6,7 +6,9 @@ const Like = ({ context }) => {
   const [likeTimes, setLikeTimes] = useState(0);
 
   const showNotification = () => {
-    notification["info"]({
+    notification.info({
+      key: `${context.postTitle}${context.key}`,
+      duration: 2,
       message: "You liked the post",
       description: `The post "${context.postTitle}" now has ${likeTimes + 1} likes`,
     });
