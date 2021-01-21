@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Тематические новости</string>
+    <string name="new_header_txt">Новости по теме \"%s\"</string>
+    <string name="empty_text">Пустой список</string>
+</resources>
