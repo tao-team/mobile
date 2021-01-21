@@ -1,11 +1,11 @@
 import React from "react";
 import Post from "./Post";
-import "./Newsline.css";
+import "./scroll.css";
 
 const Newsline = ({ postsContent }) => {
   return (
     <div
-      className="newsline" // Chrome
+      className={"hidden-scroll"} // remove to show the scroll
       style={{
         display: "flex",
         flexDirection: "column",
@@ -16,9 +16,6 @@ const Newsline = ({ postsContent }) => {
         overflowY: "scroll",
         border: "solid 1px #d9d9d9",
         borderRadius: 4,
-        scrollbarWidth: "none", // Firefox
-        msOverflowStyle: "none", // IE and Edge
-        // boxShadow: "inset 0px 0px 10px 20px orange",
       }}
     >
       {postsContent.map(content => (

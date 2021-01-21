@@ -89,7 +89,7 @@ function App() {
           >
             Add ToDo
           </Button>
-          <Modal visible={showModal} closable={false} onCancel={closeModal} onOk={addNewTodo}>
+          <Modal visible={showModal} closable={false} onCancel={closeModal} onOk={addNewTodo} okText="Add">
             <Input type="text" placeholder="Feed the cat" ref={newTodo} onPressEnter={addNewTodo}></Input>
           </Modal>
         </div>

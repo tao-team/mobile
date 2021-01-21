@@ -1,9 +1,0 @@
-.newsline::-webkit-scrollbar {
-  display: none;
-}
-
-.newsline {
-  -webkit-box-shadow: inset 0px -26px 20px -20px #d9d9d9;
-  -moz-box-shadow: inset 0px -26px 20px -20px #d9d9d9;
-  box-shadow: inset 0px -26px 20px -20px #d9d9d9;
-}
