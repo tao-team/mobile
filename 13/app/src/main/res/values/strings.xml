@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Распознование речи</string>
+    <string name="record">Запись</string>
+    <string name="stop">Остановить</string>
+    <string name="to_record">К записи</string>
+    <string name="filename_txt_template">Последний файл: %s</string>
+    <string name="decode">Распознать речь</string>
+    <string name="record_now">Идёт запись</string>
+</resources>
