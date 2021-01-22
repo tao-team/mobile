@@ -1,46 +1,17 @@
 <!DOCTYPE HTML>
+
 <html>
+
 <head>
-    <title>My Page</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <title>Кости</title>
 </head>
 
 <body>
+    <button id="play_button">Play!</button>
+
+    <script src="index.js"></script>
 </body>
-
-<script>
-
-function randomInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-
-let userScore = 0;
-let botScore = 0;
-let userWin = "Congrats, you have won";
-let botWin = "Sorry, bot has won, try one more time";
-let draw = "You and bot have equal points";
-
-for (i = 0; i < 3; i++){
-	userScore += randomInteger(1, 6)
-}
-
-for (i = 0; i < 3; i++){
-	botScore += randomInteger(1, 6)
-}
-
-if (userScore > botScore){
-	alert("User score: " + userScore + "\n" + "Bot score: " + botScore + "\n" + userWin);
-}
-else if (userScore < botScore){
-	alert("User score: " + userScore + "\n" + "Bot score: " + botScore + "\n" + botWin);
-}
-
-else{
-	alert("User score: " + userScore + "\n" + "Bot score: " + botScore + "\n" + draw);
-}
-
-
-
-</script>
 
 </html>
